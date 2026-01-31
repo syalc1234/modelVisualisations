@@ -1,0 +1,10 @@
+numba
+numpy
+matplotlib
+yfinance
+ipykernel
+scipy
+times
+seaborn
+pandas
+tqdm

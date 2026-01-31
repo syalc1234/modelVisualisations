@@ -16,12 +16,9 @@ export default function HestonForm({ fields }: Props) {
 
     async function handler(req: string) {
         console.log(req);
-        const request: RequestInfo = new Request('http://127.0.0.1:8000/hello/', {
-            // We need to set the `method` to `POST` and assign the headers
+        const request: RequestInfo = new Request('http://localhost:8000/hello/', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-
-            // Convert the user object to JSON and pass it as the body
             body: req
         })
         const response = await fetch(request);
@@ -42,6 +39,7 @@ export default function HestonForm({ fields }: Props) {
             <div className="grid grid-cols-2 gap-4">
 
                 {fields.map((increment) => <Input
+                    key ={increment}
                     isRequired
                     errorMessage={`Enter a valid ${increment} value`}
                     label={increment}
